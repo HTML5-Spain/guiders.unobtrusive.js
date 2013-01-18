@@ -18,8 +18,8 @@
 <h1>Unobtrusive Guiders Demo</h1>
 <h2><a href="https://github.com/tarr11/guiders.unobtrusive.js">On github</a>
 <input type="button" id="my-button" value="My Button">
-<div style="display:hidden" id="my-guider">
-    <div data-position="3" data-autoFocus="true" data-overlay="true" data-closeOnEscape="true" data-xButton="true">
+<div style="display:none" id="my-guider">
+    <div class="guider-box" data-position="3" data-autoFocus="true" data-overlay="true" data-closeOnEscape="true" data-xButton="true">
         <div class="guider-title">A guider with HTML in it!</div>
         <div class="guider-body">
             <div><a href="http://www.corpqna.com">CorpQNA</a> helps you ask, answer, and organize questions at your company.</div>
@@ -28,7 +28,7 @@
             <div class="btn btn-primary">Next</div>
         </div>
     </div>
-    <div data-position="3" data-attachTo="#my-button" data-autoFocus="true" data-overlay="false" data-closeOnEscape="true" data-xButton="true">
+    <div class="guider-box" data-position="3" data-attachTo="#my-button" data-autoFocus="true" data-overlay="false" data-closeOnEscape="true" data-xButton="true">
         <div class="guider-title">A second slide</div>
         <div class="guider-body">
             <div>This slide doesn't have an overlay, and attaches to a control element via data-attachTo</div>
