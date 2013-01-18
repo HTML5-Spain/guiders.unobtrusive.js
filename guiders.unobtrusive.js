@@ -1,4 +1,4 @@
-﻿/*
+/*
 * guiders.unobtrusive.js
 * An unobtrusive guiders.js extension.
 * version 1.0
@@ -20,17 +20,25 @@
 		// there's no need to do $(this) because
 		// "this" is already a jquery object
 
+		var ids = [];
+
+		this.children().each(function (index, val) {
+			if (val.id == "")
+				ids.push("guider-" + index);
+			else
+				ids.push(val.id);
+		});
+
 		this.children().each(function (index, value) {
-			// $(this) would be the same as $($('#element'));
+			var guiderId = ids[index];
+			var nextId = ids[index + 1];
 			var buttons = [];
 			$(this).find('.guider-buttons-row').children().each(function () {
-
 				var btn = {
 					name: $(this).html(),
 					classString: $(this).attr('class')
 				};
-				if ($(this).attr("data-onclick"))
-				{
+				if ($(this).attr("data-onclick")) {
 					var functionName = $(this).attr("data-onclick");
 					btn.onclick = function () { window[functionName]() };
 				}
@@ -41,8 +49,8 @@
 				description: $(this).find('.guider-body').html(),
 				buttons: buttons,
 				attachTo: $(this).attr('data-attachTo'),
-				id: "guider-" + index,
-				next: "guider-" + (index + 1),
+				id: guiderId,
+				next: nextId,
 				overlay: ($(this).attr('data-overlay') == "true"),
 				title: $(this).find('.guider-title').html(),
 				position: $(this).attr('data-position'),
@@ -54,7 +62,7 @@
 				shouldSkip: ($(this).attr('data-shouldSkip') == "true")
 			};
 			if ($(this).attr('data-offset'))
-					guiderOptions.offset = JSON.parse($(this).attr('data-offset'));
+				guiderOptions.offset = JSON.parse($(this).attr('data-offset'));
 
 
 			if ($(this).width() > 0) {
@@ -64,7 +72,7 @@
 			if ($(this).height() > 0) {
 				guiderOptions.height = $(this).height();
 			}
-				var guider = guiders.createGuider(guiderOptions);
+			var guider = guiders.createGuider(guiderOptions);
 
 			if (index == 0)
 				guider.show();
