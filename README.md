@@ -3,6 +3,8 @@ guiders.unobtrusive.js (version 1.0)
 
 Unobtrusive guiders are a software tour that leverages guiders.js, but allows you to declare most or all of your guider code in html5 + data attributes, instead of in javascript.
 
+[View Demo](http://tarr11.github.com/guiders.unobtrusive.js/demo.html)
+
 
 Why unobtrusive guiders?:
 -----
