@@ -37,8 +37,25 @@
             <div class="btn btn-primary">Close</div>
         </div>
     </div>
+    <div class="guider-box" data-position="3" data-autoFocus="true" data-overlay="false" data-closeOnEscape="true" data-xButton="true">
+        <div class="guider-title">A third slide</div>
+        <div class="guider-body">
+            <div>This slide has a special button that invokes javascript</div>
+        </div>
+        <div class="guider-buttons-row">
+            <div class="btn" data-onclick="gotoGithub">Go to source on github</div>
+            <div class="btn">Close</div>
+        </div>
+    </div>
 </div>
 <script>
+function gotoGithub()
+{
+
+	window.href="https://github.com/tarr11/guiders.unobtrusive.js";
+
+}
+
 $(document).ready(function () {
     $('#my-guider').guider();
 });
